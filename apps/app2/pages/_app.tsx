@@ -1,15 +1,14 @@
 import type { AppProps } from 'next/app';
-import type { App1Router } from '@nx-trpc-nextjs/trpc-router';
+import type { App2Router } from '@nx-trpc-nextjs/trpc-router';
 import Head from 'next/head';
 import { withTRPC } from '@trpc/next';
 import superjson from 'superjson';
-import './styles.css';
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Welcome to app1!</title>
+        <title>Welcome to app2!</title>
       </Head>
       <main className="app">
         <Component {...pageProps} />
@@ -18,7 +17,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default withTRPC<App1Router>({
+export default withTRPC<App2Router>({
   config() {
     const url = process.env.VERCEL_URL
       ? `https://${process.env.VERCEL_URL}/api/trpc`

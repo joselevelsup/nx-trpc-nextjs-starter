@@ -3,6 +3,11 @@
   "version": 2,
   "projects": {
     "app1": "apps/app1",
-    "app1-e2e": "apps/app1-e2e"
+    "app1-e2e": "apps/app1-e2e",
+    "app2": "apps/app2",
+    "app2-e2e": "apps/app2-e2e",
+    "app3": "apps/app3",
+    "app3-e2e": "apps/app3-e2e",
+    "trpc-router": "libs/trpc-router"
   }
 }

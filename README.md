@@ -1,94 +1,32 @@
+# NX + tRPC + Prisma + Next.js = ❤️
 
+This repo is just a starting point to show tRPC in one library then used in Next.js in two different places inside of an entire monorepo. Overkill? Maybe. Awesome? Hell yeah!
 
-# NxTrpcNextjs
+Write your server in one place, serve from whereever you want. So instead of writing a REST server and having to serve from an entirely different process, just have Next.js do that for you with tRPC.
 
-This project was generated using [Nx](https://nx.dev).
+## What the apps doin?
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+Well App1 and App2 kind of do the same thing. They just show that they can query from their respective router. As you can see in `root/libs/trpc-router/src/lib/trpc-router.ts` there is a `baseRouter`. That can be removed and you can keep the routers COMPLETELY seperate. In this example, both routers inherit from the `baseRouter`;
 
-🔎 **Smart, Fast and Extensible Build System**
+Now App3 you can keep an eye on if you are going to include a DB (well I mean, why wouldn't you). App3 has a connection to the third router which has access to the DB. Examples are in the code. Take a look.
 
-## Adding capabilities to your workspace
+Please keep in mind, all these apps are pure barebone. No designs or CSS Frameworks/libraries were used.
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+### Run Each App
 
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+Each Next App starts on port 4200 so you wouldn't be able to run all at the same time.
 
-Below are our core plugins:
+- if you have NX installed gloabally `nx serve [which-ever-app]`. Example: `nx serve app1`
+- Not installed globally `npx nx serve [which-ever-app]`. Example: `npx nx serve app1`
 
-- [React](https://reactjs.org)
-  - `npm install --save-dev @nrwl/react`
-- Web (no framework frontends)
-  - `npm install --save-dev @nrwl/web`
-- [Angular](https://angular.io)
-  - `npm install --save-dev @nrwl/angular`
-- [Nest](https://nestjs.com)
-  - `npm install --save-dev @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `npm install --save-dev @nrwl/express`
-- [Node](https://nodejs.org)
-  - `npm install --save-dev @nrwl/node`
+## Technologies
 
-There are also many [community plugins](https://nx.dev/community) you could add.
+- [ NX Monorepo ](https://nx.dev)
+- [tRPC](https://trpc.io)
+- [Next.js](https://nextjs.org)
+- [Prisma](https://www.prisma.io/)
 
-## Generate an application
+### Inspirations
 
-Run `nx g @nrwl/react:app my-app` to generate an application.
-
-> You can use any of the plugins above to generate applications as well.
-
-When using Nx, you can create multiple applications and libraries in the same workspace.
-
-## Generate a library
-
-Run `nx g @nrwl/react:lib my-lib` to generate a library.
-
-> You can also use any of the plugins above to generate libraries as well.
-
-Libraries are shareable across libraries and applications. They can be imported from `@nx-trpc-nextjs/mylib`.
-
-## Development server
-
-Run `nx serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `nx g @nrwl/react:component my-component --project=my-app` to generate a new component.
-
-## Build
-
-Run `nx build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `nx test my-app` to execute the unit tests via [Jest](https://jestjs.io).
-
-Run `nx affected:test` to execute the unit tests affected by a change.
-
-## Running end-to-end tests
-
-Run `nx e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx graph` to see a diagram of the dependencies of your projects.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev) to learn more.
-
-
-
-## ☁ Nx Cloud
-
-### Distributed Computation Caching & Distributed Task Execution
-
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.
+- [T3 Stack](https://github.com/t3-oss/create-t3-app)
+- [ tRPC Awesome Collections Starting Point ](https://trpc.io/docs/v9/awesome-trpc#-starting-points-example-projects-etc)

@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nx-trpc-nextjs/trpc-router": ["libs/trpc-router/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

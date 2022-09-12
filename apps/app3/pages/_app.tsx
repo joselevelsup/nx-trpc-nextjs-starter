@@ -3,13 +3,13 @@ import type { App1Router } from '@nx-trpc-nextjs/trpc-router';
 import Head from 'next/head';
 import { withTRPC } from '@trpc/next';
 import superjson from 'superjson';
-import './styles.css';
+import '../styles.css';
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Welcome to app1!</title>
+        <title>Welcome to app3!</title>
       </Head>
       <main className="app">
         <Component {...pageProps} />
